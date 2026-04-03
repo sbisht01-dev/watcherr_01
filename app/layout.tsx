@@ -33,9 +33,9 @@ export default function RootLayout({
         <Cursor />
         <Suspense fallback={<div className="bg-black min-h-screen" />}>
           <SmoothScroll>
-            <PageTransition>
+            {/* <PageTransition> */}
               {children}
-            </PageTransition>
+            {/* </PageTransition> */}
           </SmoothScroll>
         </Suspense>
       </body>

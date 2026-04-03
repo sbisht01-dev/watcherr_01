@@ -8,7 +8,8 @@ import Footer from "@/components/navigation/Footer";
 import { ExternalLink, ArrowLeft, Info, ArrowUpRight } from "lucide-react";
 import Link from 'next/link';
 
-const projectsData = {
+export const projectsData = {
+    // --- MAIN FEATURED WORKS ---
     "fintech-dashboard": {
         title: "Fintech Dashboard",
         cta: "View Live",
@@ -56,9 +57,47 @@ const projectsData = {
             "For the final polish, I implemented 'Lottie' animations for the checkout process to reduce 'cart abandonment.' These small motion cues guide the user through payment steps, making a complex process feel effortless."
         ],
         mainImg: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=2070",
+    },
+
+    // --- UI VAULT ARCHIVE PROJECTS ---
+    "glassmorphism-study": {
+        title: "Glass UI Study",
+        cta: "View Case",
+        excerpt: "Exploring the limits of transparency, blur, and lighting in modern interface design.",
+        liveLink: "#",
+        fullStory: [
+            "This was a technical exploration into 'The Frosted Look'. I wanted to see how far backdrop-filters could be pushed without sacrificing accessibility or performance in a browser environment.",
+            "Using Figma's advanced layer styles, I developed a system where contrast is maintained through subtle inner borders rather than heavy drop shadows. This creates a much 'cleaner' glass effect that feels like physical hardware.",
+            "I eventually translated these styles into Tailwind CSS, creating a custom utility class library for high-end SaaS applications that need a futuristic, layered aesthetic."
+        ],
+        mainImg: "https://images.unsplash.com/photo-1613909209472-7b0b23c15abc?q=80&w=1000",
+    },
+    "crypto-wallet-concept": {
+        title: "Crypto Wallet",
+        cta: "View Concept",
+        excerpt: "A mobile-first approach to digital asset management focusing on security through visual trust.",
+        liveLink: "#",
+        fullStory: [
+            "Crypto interfaces are notoriously complex. For this vault entry, I focused on 'The Onboarding Loop'—making the seed phrase backup process feel less like a chore and more like a high-security ceremony.",
+            "The UI uses a dark-brutalist theme, utilizing high-contrast typography (Inter and Bricolage) to make transaction data readable at a glance. I used a 4px grid to ensure every element was mathematically aligned.",
+            "I integrated custom 3D coin renders created in Blender to give the portfolio view a premium, tangible feel. The result is a wallet that feels like a physical bank vault in your pocket."
+        ],
+        mainImg: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=1000",
+    },
+    "brutalist-web": {
+        title: "Brutalist Web",
+        category: "Web Concept",
+        cta: "View Layout",
+        excerpt: "Breaking the 'boring' web layout rules with oversized type and raw layouts.",
+        liveLink: "#",
+        fullStory: [
+            "This project is a rebellion against standard 'corporate' layouts. I experimented with extreme typography scales and raw, unpolished borders to create a 'Director's Cut' web experience.",
+            "The design relies heavily on horizontal scrolling and fixed background images to create a layered parallax effect. I utilized Framer Motion to stagger the appearance of each section, making the raw layout feel intentional and smooth.",
+            "By removing all unnecessary gradients and shadows, the focus remains purely on content and structure—a true study in 'Information Architecture' over 'Decoration'."
+        ],
+        mainImg: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000",
     }
 };
-
 export default function ProjectPage() {
     const params = useParams();
     const id = params.id as string;
