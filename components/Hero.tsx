@@ -2,48 +2,95 @@
 
 import React from 'react';
 import { motion } from "framer-motion";
-import FloatingStack from "./hero/FloatingStack";
 import Magnetic from './Magnetic';
+
+// 1. THE LARGE COLOR STRIP (Vertical Monoliths)
+const ColorStrip = () => {
+    const colors = [
+        { name: "White", hex: "#FFFFFF", bg: "bg-white" },
+        { name: "Brand Red", hex: "#FF3333", bg: "bg-brand-red" },
+        { name: "Deep Red", hex: "#990000", bg: "bg-[#990000]" },
+        { name: "Studio Black", hex: "#000000", bg: "bg-black" },
+        { name: "Grey", hex: "#111111", bg: "bg-[#111111]" },
+    ];
+
+    return (
+        <div className="hidden lg:flex flex-col items-end justify-center h-[70vh] gap-1 pr-4">
+            {/* Top Label */}
+            <div className="mb-6 mr-1 text-right">
+                <span className="font-mono text-[10px] uppercase tracking-[0.5em] text-white/20 block">
+                    Brand Palette
+                </span>
+                <span className="font-mono text-[8px] uppercase text-brand-red tracking-widest">
+                    V.2.0.26
+                </span>
+            </div>
+            
+            <div className="flex flex-row items-end gap-1 h-full">
+                {colors.map((color, i) => (
+                    <motion.div
+                        key={i}
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "100%" }}
+                        transition={{ 
+                            delay: 0.8 + i * 0.1, 
+                            duration: 1.2, 
+                            ease: [0.16, 1, 0.3, 1] 
+                        }}
+                        whileHover={{ width: 180 }}
+                        /* Increased default width from w-16 to w-24 or w-32 for significance */
+                        className={`group relative w-16 md:w-20 lg:w-24 h-full ${color.bg} cursor-crosshair transition-all duration-700 ease-[0.16, 1, 0.3, 1] flex items-end justify-start pb-12 overflow-hidden`}
+                    >
+                        {/* Vertical Text on Hover */}
+                        <div className="absolute top-12 left-1/2 -translate-x-1/2 -rotate-90 origin-center whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                             <span className="font-mono text-[11px] text-white mix-blend-difference uppercase tracking-[0.3em] font-bold">
+                                {color.name} — {color.hex}
+                            </span>
+                        </div>
+                        
+                        {/* Dot Indicator */}
+                        <div className="absolute top-6 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-brand-red transition-colors duration-500" />
+                    </motion.div>
+                ))}
+            </div>
+            
+            {/* Bottom Label */}
+            <div className="mt-8 text-right">
+                <span className="font-heading text-xl text-white uppercase tracking-tighter italic">
+                    Visual <span className="text-brand-red not-italic">Identity.</span>
+                </span>
+            </div>
+        </div>
+    );
+};
 
 export default function Hero() {
     return (
-        /* MATCHING WORKGRID: 
-           We put the padding (px-6 md:px-12) on the SECTION tag, 
-           and we REMOVE the max-w-7xl wrapper to match your WorkGrid layout.
-        */
-        <section className="relative min-h-screen flex flex-col justify-center py-24 px-6 md:px-12 bg-brand-black overflow-hidden">
-
-            {/* Background Layer */}
-            {/* <div className="absolute inset-0 z-0 pointer-events-none">
-                <FloatingStack />
-            </div> */}
-
-            {/* THE CONTENT: 
-               By removing the centered container and just letting it sit 
-               inside the section's padding, it will line up perfectly 
-               with the "SELECTED WORKS" title.
-            */}
-            <div className="relative z-10 w-full">
-                <div className="flex flex-col items-start text-left">
-
+        <section className="relative min-h-screen flex items-center py-24 px-6 md:px-12 bg-brand-black overflow-hidden">
+            
+            {/* MAIN CONTENT WRAPPER */}
+            <div className="relative z-10 w-full flex flex-col lg:flex-row items-center justify-between">
+                
+                {/* LEFT SIDE: PERSONAL INFO */}
+                <div className="flex-[1.2] flex flex-col items-start text-left">
                     <motion.p
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         className="text-brand-red font-mono text-xs uppercase tracking-[0.4em] mb-8"
                     >
-                        Based in Ghaziabad, UP, India — Available for Projects
+                        Based in Ghaziabad, IN — Available for Projects
                     </motion.p>
+                    
                     <motion.h1
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                        /* Added 'italic' and 'tracking-tight' for a sleek look */
                         className="font-heading text-7xl md:text-9xl lg:text-[11vw] uppercase leading-[0.85] tracking-tight italic text-white"
                     >
                         SAURABH<br />
-                        BISHT<span className="text-brand-red not-italic">.</span>
-                        {/* I added 'not-italic' to the dot so it stays a perfect circle */}
+                        BISHT<span className="text-brand-red not-italic inline-block">.</span>
                     </motion.h1>
+
                     <div className="mt-10">
                         <motion.h2
                             className="font-heading text-3xl md:text-5xl uppercase tracking-tight text-white/40 leading-none"
@@ -60,8 +107,6 @@ export default function Hero() {
 
                     <div className="mt-16">
                         <Magnetic>
-
-
                             <motion.a
                                 href="#work"
                                 className="group inline-flex items-center gap-6 border border-white/10 rounded-full pl-8 pr-3 py-3 hover:border-brand-red transition-all duration-500 bg-white/5 backdrop-blur-sm"
@@ -77,6 +122,11 @@ export default function Hero() {
                             </motion.a>
                         </Magnetic>
                     </div>
+                </div>
+
+                {/* RIGHT SIDE: LARGE COLOR MONOLITHS */}
+                <div className="hidden lg:block flex-1 flex justify-end pl-20">
+                    <ColorStrip />
                 </div>
             </div>
 

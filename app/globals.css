@@ -9,31 +9,24 @@
   --color-brand-grey-800: #1A1A1B;
   --color-brand-grey-900: #121212;
 
-  --font-heading: var(--font-bricolage);
+ --font-heading: var(--font-bricolage);
   --font-body: var(--font-inter)
 }
 
 @layer base {
-
   /* Force all headings to use Bricolage Grotesque by default */
-  h1,
-  h2,
-  h3,
-  .font-heading {
+  h1, h2, h3, .font-heading {
     font-family: var(--font-bricolage), sans-serif !important;
   }
 
   html {
-    background-color: #000000;
-    /* Force black background at the highest level */
+    background-color: #000000; /* Force black background at the highest level */
   }
-
   body {
     background-color: #000000;
     color: #ffffff;
     @apply antialiased;
-    overflow-x: hidden;
-    /* Prevent horizontal scroll on mobile */
+    overflow-x: hidden; /* Prevent horizontal scroll on mobile */
   }
 }
 
