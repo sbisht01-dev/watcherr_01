@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { motion } from "framer-motion";
-
 export default function About() {
   return (
     <section id="about" className="py-32 px-6 md:px-12 bg-brand-white text-brand-black">
@@ -64,7 +63,6 @@ export default function About() {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

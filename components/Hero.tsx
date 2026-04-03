@@ -31,7 +31,7 @@ export default function Hero() {
                         animate={{ opacity: 1, x: 0 }}
                         className="text-brand-red font-mono text-xs uppercase tracking-[0.4em] mb-8"
                     >
-                        Based in Delhi, India — Available for Projects
+                        Based in Ghaziabad, UP, India — Available for Projects
                     </motion.p>
 
                     <motion.h1
