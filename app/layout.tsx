@@ -15,6 +15,11 @@ const bricolage = Bricolage_Grotesque({
   weight: ["800"], // Explicitly load the heavy weight for headings
   variable: "--font-bricolage", // This must be exactly this
 });
+export const metadata = {
+  title: "Portfolio - Saurabh Bisht",
+  description: "Portfolio of Saurabh Bisht, a UI/UX Designer based in Ghaziabad.",
+  // You can also add openGraph for social media sharing
+};
 
 export default function RootLayout({
   children,

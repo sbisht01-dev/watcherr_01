@@ -14,9 +14,9 @@ export default function Hero() {
         <section className="relative min-h-screen flex flex-col justify-center py-24 px-6 md:px-12 bg-brand-black overflow-hidden">
 
             {/* Background Layer */}
-            <div className="absolute inset-0 z-0 pointer-events-none">
+            {/* <div className="absolute inset-0 z-0 pointer-events-none">
                 <FloatingStack />
-            </div>
+            </div> */}
 
             {/* THE CONTENT: 
                By removing the centered container and just letting it sit 
@@ -33,16 +33,17 @@ export default function Hero() {
                     >
                         Based in Ghaziabad, UP, India — Available for Projects
                     </motion.p>
-
                     <motion.h1
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                        className="font-heading text-7xl md:text-9xl lg:text-[11vw] uppercase leading-[0.85] tracking-tighter text-white"
+                        /* Added 'italic' and 'tracking-tight' for a sleek look */
+                        className="font-heading text-7xl md:text-9xl lg:text-[11vw] uppercase leading-[0.85] tracking-tight italic text-white"
                     >
-                        SAURABH<br />BISHT<span className="text-brand-red">.</span>
+                        SAURABH<br />
+                        BISHT<span className="text-brand-red not-italic">.</span>
+                        {/* I added 'not-italic' to the dot so it stays a perfect circle */}
                     </motion.h1>
-
                     <div className="mt-10">
                         <motion.h2
                             className="font-heading text-3xl md:text-5xl uppercase tracking-tight text-white/40 leading-none"
