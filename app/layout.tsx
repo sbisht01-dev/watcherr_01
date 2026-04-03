@@ -4,6 +4,7 @@ import SmoothScroll from "@/components/providers/SmoothScroll";
 import ScrollToTop from "@/components/ScrollToTop";
 import Cursor from "@/components/Cursor";
 import PageTransition from "@/components/PageTransition";
+import { Suspense } from "react";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter"
@@ -25,10 +26,13 @@ export default function RootLayout({
       <body className={`${bricolage.variable} ${inter.variable} antialiased`}>
         <ScrollToTop />
         <Cursor />
-        <SmoothScroll>
-          <PageTransition>
-            {children}
-          </PageTransition></SmoothScroll>
+        <Suspense fallback={<div className="bg-black min-h-screen" />}>
+          <SmoothScroll>
+            <PageTransition>
+              {children}
+            </PageTransition>
+          </SmoothScroll>
+        </Suspense>
       </body>
     </html>
   );
