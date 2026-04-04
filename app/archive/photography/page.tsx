@@ -8,6 +8,7 @@ import { X, ZoomIn } from "lucide-react";
 const photos = [
     { id: 1, url: "/photography/20251216_135537.jpg", title: "Midnight Transit", loc: "Delhi" },
     { id: 2, url: "/photography/IMG20251218193609.jpg", title: "Midnight Transit", loc: "Delhi" },
+    { id: 3, url: "photography/20251215_172729.heif", title: "Midnight Transit", loc: "Delhi" },
 ];
 
 export default function PhotographyLibrary() {

@@ -5,6 +5,8 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Cursor from "@/components/Cursor";
 import PageTransition from "@/components/PageTransition";
 import { Suspense } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter"
@@ -33,8 +35,9 @@ export default function RootLayout({
         <Cursor />
         <Suspense fallback={<div className="bg-black min-h-screen" />}>
           <SmoothScroll>
+            <SpeedInsights />
             {/* <PageTransition> */}
-              {children}
+            {children}
             {/* </PageTransition> */}
           </SmoothScroll>
         </Suspense>
