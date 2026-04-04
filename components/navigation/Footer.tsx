@@ -35,9 +35,9 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { name: "LinkedIn", icon: <LinkedinIcon />, href: "https://linkedin.com/in/yourprofile" },
-    { name: "GitHub", icon: <GithubIcon />, href: "https://github.com/yourusername" },
-    { name: "Instagram", icon: <InstagramIcon />, href: "https://instagram.com/yourhandle" },
+    { name: "LinkedIn", icon: <LinkedinIcon />, href: "https://www.linkedin.com/in/saurabh-bisht-b11822236/" },
+    { name: "GitHub", icon: <GithubIcon />, href: "https://github.com/sbisht01-dev" },
+    { name: "Instagram", icon: <InstagramIcon />, href: "https://www.instagram.com/watcherr_76/" },
   ];
 
   return (
@@ -84,7 +84,7 @@ export default function Footer() {
           
           {/* Socials Column */}
           <div className="col-span-1 md:col-span-2">
-            <p className="text-brand-white/30 font-mono text-[10px] uppercase tracking-[0.4em] mb-10">Connect</p>
+            <p className="text-brand-white/70 font-mono text-[10px] uppercase tracking-[0.4em] mb-10">Connect</p>
             <div className="flex gap-10">
               {socialLinks.map((social, i) => (
                 <a 
@@ -103,20 +103,20 @@ export default function Footer() {
 
           {/* Availability Column */}
           <div>
-            <p className="text-brand-white/30 font-mono text-[10px] uppercase tracking-[0.4em] mb-10">Availability</p>
+            <p className="text-brand-white/70 font-mono text-[10px] uppercase tracking-[0.4em] mb-10">Availability</p>
             <div className="flex items-center gap-3 mb-2">
                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-               <p className="text-sm font-body tracking-wide">Open for new projects</p>
+               <p className="text-sm font-body tracking-wide">Open for freelance projects</p>
             </div>
-            <p className="text-xs text-brand-white/40 uppercase tracking-widest">Q2 - 2026</p>
+            <p className="text-xs text-brand-white/70 uppercase tracking-widest">Q2 - 2026</p>
           </div>
 
           {/* Location Column */}
           <div>
-            <p className="text-brand-white/30 font-mono text-[10px] uppercase tracking-[0.4em] mb-10">Location</p>
+            <p className="text-brand-white/70 font-mono text-[10px] uppercase tracking-[0.4em] mb-10">Location</p>
             <p className="text-sm font-body leading-relaxed tracking-wide">
               Ghaziabad, India <br /> 
-              <span className="text-brand-white/40 uppercase text-[10px] tracking-widest">GMT +5:30</span>
+              <span className="text-brand-white/70 uppercase text-[10px] tracking-widest">GMT +5:30</span>
             </p>
           </div>
         </div>

@@ -4,7 +4,6 @@ import React from 'react';
 import { motion } from "framer-motion";
 import Magnetic from './Magnetic';
 
-// 1. THE LARGE COLOR STRIP (Vertical Monoliths)
 const ColorStrip = () => {
     const colors = [
         { name: "White", hex: "#FFFFFF", bg: "bg-white" },
@@ -16,13 +15,12 @@ const ColorStrip = () => {
 
     return (
         <div className="hidden lg:flex flex-col items-end justify-center h-[70vh] gap-1 pr-4">
-            {/* Top Label */}
             <div className="mb-6 mr-1 text-right">
                 <span className="font-mono text-[10px] uppercase tracking-[0.5em] text-white/20 block">
-                    Brand Palette
+                    Portfolio Site
                 </span>
                 <span className="font-mono text-[8px] uppercase text-brand-red tracking-widest">
-                    V.2.0.26
+                    V.1.0.0
                 </span>
             </div>
             
@@ -32,29 +30,20 @@ const ColorStrip = () => {
                         key={i}
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "100%" }}
-                        transition={{ 
-                            delay: 0.8 + i * 0.1, 
-                            duration: 1.2, 
-                            ease: [0.16, 1, 0.3, 1] 
-                        }}
+                        transition={{ delay: 0.8 + i * 0.1, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                         whileHover={{ width: 180 }}
-                        /* Increased default width from w-16 to w-24 or w-32 for significance */
                         className={`group relative w-16 md:w-20 lg:w-24 h-full ${color.bg} cursor-crosshair transition-all duration-700 ease-[0.16, 1, 0.3, 1] flex items-end justify-start pb-12 overflow-hidden`}
                     >
-                        {/* Vertical Text on Hover */}
                         <div className="absolute top-12 left-1/2 -translate-x-1/2 -rotate-90 origin-center whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                              <span className="font-mono text-[11px] text-white mix-blend-difference uppercase tracking-[0.3em] font-bold">
                                 {color.name} — {color.hex}
                             </span>
                         </div>
-                        
-                        {/* Dot Indicator */}
                         <div className="absolute top-6 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-brand-red transition-colors duration-500" />
                     </motion.div>
                 ))}
             </div>
             
-            {/* Bottom Label */}
             <div className="mt-8 text-right">
                 <span className="font-heading text-xl text-white uppercase tracking-tighter italic">
                     Visual <span className="text-brand-red not-italic">Identity.</span>
@@ -67,20 +56,30 @@ const ColorStrip = () => {
 export default function Hero() {
     return (
         <section className="relative min-h-screen flex items-center py-24 px-6 md:px-12 bg-brand-black overflow-hidden">
-            
-            {/* MAIN CONTENT WRAPPER */}
             <div className="relative z-10 w-full flex flex-col lg:flex-row items-center justify-between">
                 
-                {/* LEFT SIDE: PERSONAL INFO */}
                 <div className="flex-[1.2] flex flex-col items-start text-left">
-                    <motion.p
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        className="text-brand-red font-mono text-xs uppercase tracking-[0.4em] mb-8"
-                    >
-                        Based in Ghaziabad, IN — Available for Projects
-                    </motion.p>
+                    {/* Greeting & Location */}
+                    <div className="flex flex-col gap-2 mb-8">
+                      
+                        <motion.p
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.1 }}
+                            className="text-brand-red font-mono text-[10px] uppercase tracking-[0.4em]"
+                        >
+                            Ghaziabad, IN — Available for Projects
+                        </motion.p>
+                          <motion.span 
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            className="font-heading text-2xl md:text-3xl text-white italic tracking-tight"
+                        >
+                            Hello! I’m
+                        </motion.span>
+                    </div>
                     
+                    {/* Main Name Heading */}
                     <motion.h1
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -91,18 +90,30 @@ export default function Hero() {
                         BISHT<span className="text-brand-red not-italic inline-block">.</span>
                     </motion.h1>
 
-                    <div className="mt-10">
-                        <motion.h2
-                            className="font-heading text-3xl md:text-5xl uppercase tracking-tight text-white/40 leading-none"
-                        >
-                            UI/UX Designer
-                        </motion.h2>
+                    {/* Roles & Experience Section */}
+                    <div className="mt-10 flex flex-col gap-6">
+                        <div>
+                            <motion.h2 className="font-heading text-3xl md:text-5xl uppercase tracking-tight text-white/40 leading-none">
+                                UI/UX Designer
+                            </motion.h2>
+                            <motion.h3 className="font-heading text-2xl md:text-4xl uppercase tracking-tight text-white flex items-center gap-3 mt-4">
+                                <span className="opacity-50 text-brand-red">@</span> TFRENZY PVT. LTD
+                            </motion.h3>
+                        </div>
 
-                        <motion.h3
-                            className="font-heading text-2xl md:text-4xl uppercase tracking-tight text-white flex items-center gap-3 mt-4"
+                        {/* TOTAL EXPERIENCE BADGE */}
+                        <motion.div 
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.5 }}
+                            className="flex items-center gap-4 py-3 px-6 border border-white/10 rounded-sm bg-white/[0.02] w-fit"
                         >
-                            <span className="opacity-50 text-brand-red">@</span> TFRENZY PVT. LTD
-                        </motion.h3>
+                            <span className="font-mono text-xl md:text-2xl text-brand-red font-bold">02+</span>
+                            <div className="h-8 w-[1px] bg-white/10" />
+                            <span className="font-mono text-[10px] md:text-xs uppercase tracking-widest text-white/60 leading-tight">
+                                Years of Professional <br /> UI design 
+                            </span>
+                        </motion.div>
                     </div>
 
                     <div className="mt-16">
@@ -124,13 +135,11 @@ export default function Hero() {
                     </div>
                 </div>
 
-                {/* RIGHT SIDE: LARGE COLOR MONOLITHS */}
                 <div className="hidden lg:block flex-1 flex justify-end pl-20">
                     <ColorStrip />
                 </div>
             </div>
 
-            {/* Decorative Background Text */}
             <div className="absolute -bottom-10 -left-10 select-none pointer-events-none opacity-[0.02] whitespace-nowrap hidden lg:block">
                 <h2 className="text-[25vw] font-heading uppercase leading-none">INTERFACE</h2>
             </div>

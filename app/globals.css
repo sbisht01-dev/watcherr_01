@@ -12,6 +12,9 @@
  --font-heading: var(--font-bricolage);
   --font-body: var(--font-inter)
 }
+.test{
+  color: #dadadb
+}
 
 @layer base {
   /* Force all headings to use Bricolage Grotesque by default */

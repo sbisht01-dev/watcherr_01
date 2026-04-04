@@ -6,12 +6,8 @@ import { X, ZoomIn } from "lucide-react";
 
 // 1. DATA: Add your photo URLs here
 const photos = [
-    { id: 1, url: "https://images.unsplash.com/photo-1478720568477-152d9b164e26", title: "Midnight Transit", loc: "Delhi" },
-    { id: 2, url: "https://images.unsplash.com/photo-1516239482977-b550ba7253f2", title: "Static Silence", loc: "Gurugram" },
-    { id: 3, url: "https://images.unsplash.com/photo-1536440136628-849c177e76a1", title: "Neon Pulse", loc: "Noida" },
-    { id: 4, url: "https://images.unsplash.com/photo-1493238792000-8113da705763", title: "The Void", loc: "Unknown" },
-    { id: 5, url: "https://images.unsplash.com/photo-1514306191717-452ec28c7814", title: "Brutalism", loc: "Chandigarh" },
-    { id: 6, url: "https://images.unsplash.com/photo-1485846234645-a62644f84728", title: "Cinema Studies", loc: "Studio" },
+    { id: 1, url: "/photography/20251216_135537.jpg", title: "Midnight Transit", loc: "Delhi" },
+    { id: 2, url: "/photography/IMG20251218193609.jpg", title: "Midnight Transit", loc: "Delhi" },
 ];
 
 export default function PhotographyLibrary() {
@@ -20,10 +16,10 @@ export default function PhotographyLibrary() {
 
     return (
         <main className="min-h-screen bg-brand-black pt-32 pb-20 px-6 md:px-12">
-            
+
             {/* Header: Cinematic Title */}
             <div className="max-w-7xl mx-auto mb-20 text-center">
-                <motion.span 
+                <motion.span
                     initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                     className="text-brand-red font-mono text-[10px] uppercase tracking-[0.5em] mb-4 block"
                 >
@@ -53,8 +49,8 @@ export default function PhotographyLibrary() {
                             </div>
                         </div>
 
-                        <motion.img 
-                            src={photo.url} 
+                        <motion.img
+                            src={photo.url}
                             alt={photo.title}
                             className="w-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
                         />
@@ -73,7 +69,7 @@ export default function PhotographyLibrary() {
                 {selectedId && (
                     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-12">
                         {/* Background Overlay */}
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
@@ -82,19 +78,19 @@ export default function PhotographyLibrary() {
                         />
 
                         {/* Large Image Container */}
-                        <motion.div 
+                        <motion.div
                             layoutId={selectedId}
                             className="relative max-w-5xl w-full h-full flex flex-col items-center justify-center z-10"
                         >
-                            <button 
+                            <button
                                 onClick={() => setSelectedId(null)}
                                 className="absolute top-0 right-0 text-white/40 hover:text-white p-4 transition-colors"
                             >
                                 <X size={32} />
                             </button>
 
-                            <img 
-                                src={selectedPhoto?.url} 
+                            <img
+                                src={selectedPhoto?.url}
                                 className="max-h-[80vh] object-contain shadow-2xl border border-white/5"
                                 alt="Selected"
                             />

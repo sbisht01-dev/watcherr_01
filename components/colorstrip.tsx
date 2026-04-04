@@ -34,7 +34,7 @@ export default function ColorStrip() {
                         </span>
                         
                         {/* Tiny Indicator Dot for the Current Color */}
-                        <div className="absolute right-2 top-2 w-1 h-1 rounded-full bg-white/20 group-hover:bg-white/80 transition-colors" />
+                        <div className="absolute right-2 top-2 w-1 h-x1 rounded-full bg-white/20 group-hover:bg-white/80 transition-colors" />
                     </motion.div>
                 ))}
             </div>

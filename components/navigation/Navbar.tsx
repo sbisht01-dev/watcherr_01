@@ -164,7 +164,7 @@ export default function Navbar() {
                         {/* Mobile Footer Info */}
                         <div className="mt-auto">
                             <p className="font-mono text-[10px] text-white/40 uppercase tracking-widest">
-                                Available for new projects 2026
+                                Available for freelance projects 2026
                             </p>
                         </div>
                     </motion.div>
