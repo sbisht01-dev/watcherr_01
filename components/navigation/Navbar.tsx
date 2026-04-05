@@ -98,15 +98,18 @@ export default function Navbar() {
                     </motion.div>
                 ))}
 
-                <Link href="#contact">
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="ml-4 px-8 py-3 bg-brand-red text-white text-[10px] uppercase font-bold tracking-[0.2em] transition-all duration-500 rounded-full shadow-lg shadow-brand-red/20"
-                    >
-                        Start a Project
-                    </motion.button>
-                </Link>
+                <motion.a
+                    href="mailto:saurabhb7678@gmail.com?subject=Project Inquiry"
+                    whileHover={{
+                        scale: 1.05,
+                        backgroundColor: "#FFFFFF",
+                        color: "#000000"
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    className="ml-4 px-8 py-3 bg-brand-red text-white text-[10px] uppercase font-bold tracking-[0.2em] transition-all duration-500 rounded-full shadow-lg shadow-brand-red/20 border border-brand-red"
+                >
+                    Connect
+                </motion.a>
             </nav>
 
             {/* 3. MOBILE TRIGGER */}
@@ -126,9 +129,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: "-100%" }}
                         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                        /* z-[999] ensures it's above the Hero but below the Cursor.
-                           bg-brand-black (solid) prevents the "ghosting" or "peeking" text.
-                        */
+
                         className="fixed inset-0 bg-brand-black z-[999] flex flex-col px-6 py-24 md:hidden"
                     >
                         {/* Close Button Area */}

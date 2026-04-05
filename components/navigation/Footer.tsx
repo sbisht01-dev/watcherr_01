@@ -61,7 +61,7 @@ export default function Footer() {
           </div>
 
           <motion.a 
-            href="mailto:your.email@example.com"
+            href="mailto:saurabhb7678@gmail.com"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="group relative w-32 h-32 md:w-56 md:h-56 rounded-full bg-brand-red flex items-center justify-center overflow-hidden transition-all duration-500"
