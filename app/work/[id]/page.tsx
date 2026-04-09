@@ -10,27 +10,27 @@ import Link from 'next/link';
 
 export const projectsData = {
     // --- MAIN FEATURED WORKS ---
-    "fintech-dashboard": {
-        title: "Fintech Dashboard",
+    "geeom-securities": {
+        title: "GEEOM Securities",
         cta: "View Live",
-        excerpt: "A high-performance trading interface built for rapid decision-making and data clarity.",
-        liveLink: "https://your-live-site.com",
+        excerpt: "A high-vibrancy fintech platform bridging the gap between legacy wealth management and modern digital efficiency.",
+        liveLink: "https://geeom.vercel.app/",
         fullStory: [
-            "The primary objective was to reduce cognitive load for high-frequency traders. We identified that color-coded heatmaps and custom typography scales were the most effective ways to highlight market volatility without causing visual fatigue.",
-            "I spent time in Blender crafting custom 3D glass-morphism assets to replace standard flat icons, giving the dashboard a 'depth' that feels tangible. This helped users distinguish between primary and secondary navigation layers instantly.",
-            "Technically, the challenge was maintaining 60fps animations while streaming live data. By using Next.js and optimized Framer Motion triggers, the result is a tool that feels as fast as the markets it tracks."
+            "The challenge was to modernize a 30-year-old financial legacy without losing the 'Trust' factor. I developed a design system that uses high-contrast typography and a vibrant color palette to make wealth management feel accessible to a new generation of investors.",
+            "I focused heavily on interactive utility by designing a custom SIP calculator. The goal was to translate complex CAGR mathematics into an effortless visual experience, allowing users to see their financial future through real-time reactive cards and sliders.",
+            "The site’s architecture is built on a clean 12-column grid. A standout feature is the 'GEEOM Philosophy' section, where I used vertical typography and structured layouts to create a rhythmic, 'Studio' feel that differentiates the brand from standard corporate competitors."
         ],
-        mainImg: "https://images.unsplash.com/photo-1551288049-bbbda5366392?q=80&w=2070",
+        mainImg: "/Projects/geeom.webp",
     },
-    "eco-app": {
-        title: "Eco-App Mobile",
-        cta: "View Demo",
-        excerpt: "Redesigning the sustainability experience through tactile UI and organic motion.",
-        liveLink: "https://your-demo-link.com",
+    "chirpy": {
+        title: "Chirpy AI",
+        cta: "View Prototype",
+        excerpt: "A specialized AI chat agent designed to bridge the knowledge gap between pet owners, nature enthusiasts, and the animal kingdom.",
+        liveLink: "https://your-figma-proto-link.com",
         fullStory: [
-            "Most sustainability apps feel clinical and dry. My goal for this redesign was to make environmental tracking feel 'alive' and rewarding. I focused on a gesture-based UI that mimics natural physical interactions.",
-            "I utilized Figma to build a comprehensive component library based on atomic design principles. To elevate the experience, I integrated Lottie animations for splash screens and success states, ensuring every user action felt celebrated.",
-            "The transition from Figma to React Native was focused on micro-interactions. Every swipe and scroll was tuned to provide haptic-like feedback, creating a premium mobile experience that encourages daily use."
+            "Most AI assistants are generalists, but Chirpy was designed with a specific niche: the animal kingdom. Whether a user is curious about a bird in their backyard, an insect on a leaf, or a sudden change in their pet's behavior, Chirpy provides instant, expert-level insights through a conversational interface.",
+            "The design challenge was to make a tech-heavy AI feel 'organic.' I achieved this by using a fluid, line-art logo and a rounded design system that mimics the soft curves found in nature. By utilizing a 'Midnight and Ice' color palette, I balanced the reliability of a professional tool with the approachability of a friendly companion.",
+            "I focused heavily on the Chat UX, ensuring that long-form information about species or health tips is broken down into digestible, scannable cards. The end result is a mobile application that doesn't just answer questions, but encourages users to observe and connect more deeply with the living world around them."
         ],
         mainImg: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070",
     },
